@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Local accounts-payable document intake and approval demo"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = "MIT"
 authors = [{name = "Raja Channa / NextGen Tech Solutions"}]
 dependencies = [
   "fastapi>=0.115,<1",
@@ -23,7 +23,7 @@ ai = ["openai>=1.68,<3"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = ["invoiceflow"]
+packages = ["invoiceflow", "invoiceflow.static"]
 [tool.setuptools.package-data]
 invoiceflow = ["static/*.html"]
 [tool.pytest.ini_options]
