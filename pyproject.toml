@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "invoiceflow-pro"
+version = "0.1.0"
+description = "Local accounts-payable document intake and approval demo"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Raja Channa / NextGen Tech Solutions"}]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "pydantic>=2.7,<3",
+  "pypdf>=5,<7",
+  "python-multipart>=0.0.18,<1",
+]
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "reportlab>=4,<5"]
+ai = ["openai>=1.68,<3"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["invoiceflow"]
+[tool.setuptools.package-data]
+invoiceflow = ["static/*.html"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

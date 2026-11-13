@@ -1,0 +1,10 @@
+Vendor: Northstar Office Supply
+Invoice Number: NS-1042
+Invoice Date: 2026-11-03
+Due Date: 2026-12-03
+Currency: USD
+ITEM: Laptop stand | 2 | 45.00 | 90.00
+ITEM: Desk mat | 3 | 20.00 | 60.00
+Subtotal: 150.00
+Tax: 15.00
+Total: 165.00

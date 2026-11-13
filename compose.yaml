@@ -1,0 +1,13 @@
+services:
+  invoiceflow:
+    build: .
+    env_file: .env
+    environment:
+      IF_DB_PATH: /data/invoiceflow.sqlite
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - invoiceflow-data:/data
+    restart: unless-stopped
+volumes:
+  invoiceflow-data:
