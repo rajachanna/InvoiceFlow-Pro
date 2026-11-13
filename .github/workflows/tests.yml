@@ -12,6 +12,10 @@ jobs:
           python-version: '3.12'
       - name: Install test dependencies
         run: python -m pip install -e '.[dev]'
+      - name: Verify built wheel contains dashboard
+        run: |
+          python -m pip wheel --no-deps . -w wheelhouse
+          python -c "from pathlib import Path; from zipfile import ZipFile; p=next(Path('wheelhouse').glob('*.whl')); assert 'invoiceflow/static/index.html' in ZipFile(p).namelist()"
       - name: Run automated tests
         run: python -m pytest -q
       - name: Run offline evaluation
